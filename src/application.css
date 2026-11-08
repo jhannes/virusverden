@@ -18,3 +18,8 @@ header {
 * {
   margin: unset;
 }
+
+dialog {
+  margin: revert;
+  background-color: transparent;
+}
