@@ -115,6 +115,7 @@ function VirusWorldMap({
     map.addOverlay(overlay);
   }, []);
   function handleStartGame(e: MapBrowserEvent) {
+    console.log("test");
     const features = map.getFeaturesAtPixel(e.pixel);
     if (features.length === 1) {
       setValgtLand(features[0] as Feature);
@@ -125,7 +126,7 @@ function VirusWorldMap({
     }
   }
   useEffect(() => {
-    if (!virusNavn || virusNavn?.length === 0) {
+    if (!virusNavn) {
       map.on("click", handleStartGame);
     }
     return () => map.un("click", handleStartGame);
